@@ -2,9 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+}
+
 .gradient-text-white {
   background: linear-gradient(180deg, #FFF 36.36%, rgba(255, 255, 255, 0.00) 165%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.portfolio-scroll ::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: #eb5a4010;
+  -webkit-border-radius: 1ex;
+  margin-top: 20px;
+}
+
+.portfolio-scroll ::-webkit-scrollbar-thumb {
+  background: #EB8776;
+  -webkit-border-radius: 1ex;
+}
+
+.portfolio-scroll ::-webkit-scrollbar-corner {
+  background: #EB594010;
 }

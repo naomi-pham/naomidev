@@ -2,27 +2,34 @@
 
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import SectionLayout from "../common/layout/SectionLayout";
 
-interface TabProps {
-  id: number;
-  label: string;
-  title: string;
-  content: string;
-}
-
-const Services = () => {
+const ServiceTabs = () => {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   return (
-    <SectionLayout
-      title="Services"
-      id="services"
-      page={2}
-      leftComponent={
-        <TabLabels selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
-      }
-    >
+    <div className="flex items-center justify-between">
+      <ul className="flex -space-x-32">
+        {tabs.map((item) => (
+          <li
+            key={item.label}
+            className={`${
+              item === selectedTab
+                ? "z-10  text-neutral-50"
+                : "bg-primary-500/5 text-neutral-50/40"
+            } relative flex  aspect-square w-[350px] cursor-pointer items-center justify-center rounded-full text-center text-heading-3`}
+            onClick={() => setSelectedTab(item)}
+          >
+            {item.label}
+            {item === selectedTab ? (
+              <motion.span
+                layoutId="bubble"
+                className="absolute inset-0 z-10 rounded-full bg-primary-500/50 mix-blend-overlay"
+                transition={{ type: "spring", bounce: 0.1, duration: 0.7 }}
+              />
+            ) : null}
+          </li>
+        ))}
+      </ul>
       <div className="">
         <AnimatePresence mode="wait">
           <motion.div
@@ -45,40 +52,7 @@ const Services = () => {
           </motion.div>
         </AnimatePresence>
       </div>
-    </SectionLayout>
-  );
-};
-
-const TabLabels = ({
-  selectedTab,
-  setSelectedTab,
-}: {
-  selectedTab: TabProps | undefined;
-  setSelectedTab: (item: TabProps) => void;
-}) => {
-  return (
-    <ul className="flex -space-x-32">
-      {tabs.map((item) => (
-        <li
-          key={item.label}
-          className={`${
-            item === selectedTab
-              ? "z-10  text-neutral-50"
-              : "bg-primary-500/5 text-neutral-50/40"
-          } relative flex  aspect-square w-[350px] cursor-pointer items-center justify-center rounded-full text-center text-heading-3`}
-          onClick={() => setSelectedTab(item)}
-        >
-          {item.label}
-          {item === selectedTab ? (
-            <motion.span
-              layoutId="bubble"
-              className="absolute inset-0 z-10 rounded-full bg-primary-500/50 mix-blend-overlay"
-              transition={{ type: "spring", bounce: 0.1, duration: 0.7 }}
-            />
-          ) : null}
-        </li>
-      ))}
-    </ul>
+    </div>
   );
 };
 
@@ -99,4 +73,4 @@ const tabs = [
   },
 ];
 
-export default Services;
+export default ServiceTabs;
