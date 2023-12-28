@@ -41,7 +41,7 @@ const ServiceTabs = () => {
           >
             {selectedTab ? (
               <div className="max-w-lg">
-                <h4 className="text-heading-4 text-primary-500">
+                <h4 className="text-heading-4 text-primary-500 md:text-title-1">
                   {selectedTab.title}
                 </h4>
                 <p className="mt-4">{selectedTab.content}</p>

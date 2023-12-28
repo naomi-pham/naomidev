@@ -10,7 +10,7 @@ const WritingPortfolio = () => {
 
   return (
     <div className="mb-4 portfolio-scroll">
-      <svg id="progress" width="80" height="80" viewBox="0 0 80 80" className="">
+      {/* <svg id="progress" width="80" height="80" viewBox="0 0 80 80" className="">
         <circle
           cx="40"
           cy="40"
@@ -26,11 +26,11 @@ const WritingPortfolio = () => {
           className="fill-none stroke-accent-400 stroke-[6px]"
           style={{ pathLength: scrollXProgress }}
         />
-      </svg>
+      </svg> */}
 
       <div
         ref={ref}
-        className="mt-8 flex scroll-m-4 items-center gap-12 overflow-x-auto"
+        className="mt-4 flex scroll-m-4 items-center gap-12 overflow-x-auto"
       >
         {WritingPortfolioList.map((item) => (
           <PortfolioCard key={item.id} item={item} />

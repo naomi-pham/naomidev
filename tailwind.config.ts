@@ -78,9 +78,9 @@ export default {
           },
         ],
         "body-1": [
-          "1rem",
+          "1.125rem",
           {
-            lineHeight: "1.5rem",
+            lineHeight: "1.7rem",
             letterSpacing: "0.01em",
             fontWeight: "400",
           },

@@ -1,9 +1,9 @@
 "use client";
 
-import { useInView, motion, MotionConfig } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -32,7 +32,7 @@ const AboutImage = () => {
             height={250}
             className=""
           />
-          <p className="absolute right-4 top-4 text-center text-title-2 text-neutral-50/90">
+          <p className="absolute right-4 top-4 text-center text-title-2 text-zinc-500">
             Naomi <span className="block">Pham</span>
           </p>
         </motion.div>

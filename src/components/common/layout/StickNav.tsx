@@ -43,21 +43,21 @@ const StickyNav = () => {
 
   return (
     <motion.ul
-      className="shadow-2xl sticky top-2 z-30 mx-auto mt-4 flex w-fit items-center justify-center gap-10 rounded-full px-8 py-4 backdrop-blur-xl transition-all
-        duration-300"
+      className="sticky top-2 z-30 mx-auto mt-4 hidden w-fit items-center justify-center gap-10 rounded-full px-8 py-4 shadow-2xl backdrop-blur-xl transition-all duration-300
+        lg:flex"
       style={{ opacity, background, y }}
     >
       {NavList.map((item) => (
         <li
           key={item.id}
-          className={`relative ${
-            position === item.id ? "opacity-100" : "opacity-80"
+          className={`relative hover:text-zinc-800 transition duration-300 ${
+            position === item.id ? "text-zinc-800" : "text-zinc-600"
           }`}
         >
           <Link href={{ pathname: "/", hash: item.url }}>{item.label}</Link>
 
           <motion.div
-            className="absolute bottom-0 h-[1px] bg-primary-500"
+            className="absolute bottom-0 h-[2px] bg-primary-500"
             animate={{ width: position === item.id ? "100%" : 0 }}
             transition={{ duration: 0.5 }}
           />
@@ -75,8 +75,8 @@ const NavList = [
   },
   {
     id: 1,
-    label: "Services",
-    url: "#services",
+    label: "Work",
+    url: "#work",
   },
   {
     id: 2,

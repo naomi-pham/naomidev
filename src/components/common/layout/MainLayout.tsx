@@ -11,7 +11,11 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
     ["#6E9EB9", "#EBECE6"],
   );
 
-  return <motion.main style={{ background }}>{children}</motion.main>;
+  return (
+    <motion.main style={{ background }} className="min-h-full">
+      {children}
+    </motion.main>
+  );
 };
 
 export default MainLayout;

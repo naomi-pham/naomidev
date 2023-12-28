@@ -21,7 +21,7 @@ const AccordionComponent = ({
   };
 
   return (
-    <div className="border-y border-y-primary-500">
+    <div className="border-y border-y-primary-500 w-full lg:max-w-lg">
       {accordionData.map((item: AccordionItemProps) => (
         <AccordionItem
           key={item.id}

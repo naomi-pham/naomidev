@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`font-sans ${tinos.variable} text-neutral-900`}>
+      <body className={`font-sans ${tinos.variable} text-body-1 text-zinc-700`}>
         <MainLayout>{children}</MainLayout>
       </body>
     </html>

@@ -20,6 +20,8 @@ html {
   background: #eb5a4010;
   -webkit-border-radius: 1ex;
   margin-top: 20px;
+  scroll-behavior: smooth;
+  display: none;
 }
 
 .portfolio-scroll ::-webkit-scrollbar-thumb {

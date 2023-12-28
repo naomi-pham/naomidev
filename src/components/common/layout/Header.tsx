@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Montserrat } from "next/font/google";
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const montserrat = Montserrat({
@@ -64,24 +66,41 @@ const Header = () => {
   }, [isOpen]);
 
   return (
-    <motion.div
-      initial={false}
-      animate={isOpen ? "open" : "closed"}
-      ref={containerRef}
-    >
-      <motion.div className="fixed inset-0 bg-neutral-50" variants={sidebar} />
-      <motion.button
-        onClick={toggleOpen}
-        className="absolute right-4 top-4 z-10 rounded-full"
-        variants={button}
-      >
-        <p
-          className={`font-sans ${montserrat.variable} text-title-3 font-bold`}
+    <>
+      <div className="flex w-full items-center justify-between py-4">
+        <Link href="/">
+          <Image
+            src="/logo.png"
+            alt="image"
+            width={80}
+            height={80}
+            className="max-w-[64px] object-cover hover:scale-110 transition duration-300"
+          />
+        </Link>
+        <motion.button
+          onClick={toggleOpen}
+          className="z-10 rounded-full"
+          variants={button}
         >
-          Menu
-        </p>
-      </motion.button>
-    </motion.div>
+          <p
+            className={`font-sans ${montserrat.variable} text-title-3 font-bold`}
+          >
+            Menu
+          </p>
+        </motion.button>
+      </div>
+      <motion.div
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        ref={containerRef}
+        className=""
+      >
+        <motion.div
+          className="fixed inset-0 z-0 bg-neutral-50"
+          variants={sidebar}
+        />
+      </motion.div>
+    </>
   );
 };
 

@@ -19,7 +19,7 @@ const AccordionItem = ({
 
   return (
     <div
-      className={`min-w-[672px] max-w-2xl overflow-hidden border-t border-primary-500 first-of-type:border-0`}
+      className={`min-w-full max-w-xs overflow-hidden border-t border-primary-500 first-of-type:border-0`}
     >
       <button
         type="button"

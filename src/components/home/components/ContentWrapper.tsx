@@ -14,11 +14,11 @@ const ContentWrapper = ({
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div ref={ref} className="max-w-lg">
+    <div ref={ref} className="lg:max-w-lg">
       <motion.h4
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 80 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
-        className="text-heading-4 text-primary-500"
+        className="text-heading-4 text-primary-500 md:text-title-1"
       >
         {title}
       </motion.h4>
