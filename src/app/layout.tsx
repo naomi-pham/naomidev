@@ -1,7 +1,6 @@
 import "~/styles/globals.css";
 
 import { Tinos } from "next/font/google";
-import MainLayout from "~/components/common/layout/MainLayout";
 
 const tinos = Tinos({
   subsets: ["latin"],
@@ -23,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`font-sans ${tinos.variable} text-body-1 text-zinc-700`}>
-        <MainLayout>{children}</MainLayout>
+        {children}
       </body>
     </html>
   );

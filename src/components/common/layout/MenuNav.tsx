@@ -1,16 +1,10 @@
-import Link from "next/link";
-import { NavList } from "./StickyNav";
+import { motion, useInView } from "framer-motion";
 import { Montserrat } from "next/font/google";
+import Link from "next/link";
 import { useRef } from "react";
-import {
-  useInView,
-  motion,
-  AnimatePresence,
-  LayoutGroup,
-  MotionConfig,
-} from "framer-motion";
 import { IconEmail } from "../Icons";
 import CustomLink from "../buttonOrLink/CustomLink";
+import { NavList } from "~/constants/data";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -94,11 +88,7 @@ const MenuNav = ({ closeMenu }: { closeMenu: () => void }) => {
               <div className="flex items-center gap-2">
                 <p>Email</p>
                 <div className="aspect-square w-1 rounded-full bg-primary-500"></div>
-                <CustomLink
-                  url="mailto:phambaonguyendn@gmail.com"
-                  isExternal
-                  color="#EB5940"
-                >
+                <CustomLink url="mailto:phambaonguyendn@gmail.com" isExternal>
                   Send me a message
                 </CustomLink>
               </div>

@@ -3,6 +3,34 @@ import NewsletterForm from "~/components/home/components/NewsletterForm";
 import PortfolioList from "~/components/home/components/PortfolioList";
 import TechTabs from "~/components/home/components/TechTabs";
 
+export const NavList = [
+  {
+    id: 0,
+    label: "About",
+    url: "#about",
+  },
+  {
+    id: 1,
+    label: "Work",
+    url: "#work",
+  },
+  {
+    id: 2,
+    label: "Portfolio",
+    url: "#portfolio",
+  },
+  {
+    id: 3,
+    label: "Blog",
+    url: "#blog",
+  },
+  {
+    id: 4,
+    label: "Contact",
+    url: "#contact",
+  },
+];
+
 export const TechStackData = [
   {
     id: 0,
@@ -66,38 +94,21 @@ export const ServiceData = [
 export const WritingPortfolioData = [
   {
     id: 0,
-    project: "Naomi's blog",
+    project: "Tailwind Dark Mode",
     image: "/writing.png",
+    postLink:
+      "https://dev.to/naomipham_/how-to-create-darklight-mode-with-react-and-tailwind-59e0",
+    description:
+      "Step-to-step guide to create Dark/Light Mode with React and TailwindCSS",
   },
   {
     id: 1,
-    project: "Viet Travels",
+    project: "Glassmorphism",
     image: "/writing.png",
-  },
-  {
-    id: 2,
-    project: "Travel logs",
-    image: "/writing.png",
-  },
-  {
-    id: 3,
-    project: "Guest Post",
-    image: "/writing.png",
-  },
-  {
-    id: 4,
-    project: "Guest Post",
-    image: "/writing.png",
-  },
-  {
-    id: 5,
-    project: "Guest Post",
-    image: "/writing.png",
-  },
-  {
-    id: 6,
-    project: "Guest Post",
-    image: "/writing.png",
+    postLink:
+      "https://naomi-pham.medium.com/how-to-create-a-glassmorphic-playlist-with-html-css-and-javascript-67b981282e7e?sk=bff23f2e1cb9e055a395f20c088f726c",
+    description:
+      "Tutorial to create a glassmorphic effect for your card component",
   },
 ];
 
@@ -106,36 +117,32 @@ export const DevelopmentPortfolioData = [
     id: 0,
     project: "Naomi's blog",
     image: "/writing.png",
-  },
-  {
-    id: 1,
-    project: "Viet Travels",
-    image: "/writing.png",
+    description:
+      "A blog demo built with Refine, Hygraph CMS, and Framer Motion. Refine is a React framework for building data-driven web app. Hygraph is a headless content management system which also provides a API endpoint for data fetching. Framer Motion enables many cool animation effects in React apps",
+    demoLink: "https://naomi-blog.vercel.app/posts",
+    githubLink: "https://github.com/naomi-pham/refine-blog/tree/main",
+    technologies: ["React", "Tailwind", "Headless CMS", "Framer Motion"],
   },
   {
     id: 2,
-    project: "Travel logs",
+    project: "World Cuisine",
     image: "/writing.png",
+    description:
+      "A blog template with A web app that allows you to search for favorite recipes by categories, cuisines, and ingredients. 🥐  Through this project, I have practiced data fetching with React and navigating/creating new pages with react-router. I also have a lot of fun playing around with DaisyUI, a TailwindCSS plugin to shorten codes for component styling. I loved the DaisyUI’s color themes and naming convention.",
+    demoLink: "https://all-world-cuisines.netlify.app/",
+    githubLink: "https://github.com/naomi-pham/world-cuisines",
+    technologies: ["React", "Tailwind", "Daisy UI"],
   },
   {
     id: 3,
-    project: "Guest Post",
+    project: "Travel Log",
     image: "/writing.png",
-  },
-  {
-    id: 4,
-    project: "Guest Post",
-    image: "/writing.png",
-  },
-  {
-    id: 5,
-    project: "Guest Post",
-    image: "/writing.png",
-  },
-  {
-    id: 6,
-    project: "Guest Post",
-    image: "/writing.png",
+    description:
+      "A blog template with responsive design and newspaper-style columns. Through this project, I have learned about creating subpages in Next.js (pages/posts/[slug]) and fetching GraphQL API within a headless CMS (Hygraph).",
+    demoLink: "https://my-travel-logs.vercel.app/",
+    githubLink:
+      "https://github.com/naomi-pham/my-travel-logs/blob/main/README.md",
+    technologies: ["React", "Tailwind", "Headless CMS"],
   },
 ];
 

@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { NavList } from "~/constants/data";
 
 const StickyNav = () => {
   const { scrollYProgress } = useScroll();
@@ -42,57 +43,29 @@ const StickyNav = () => {
   }, []);
 
   return (
-    <motion.ul
-      className="sticky top-2 z-30 mx-auto mt-4 hidden w-fit items-center justify-center gap-10 rounded-full px-8 py-4 shadow-2xl backdrop-blur-xl transition-all duration-300
-        lg:flex"
-      style={{ opacity, background, y }}
-    >
-      {NavList.map((item) => (
-        <li
-          key={item.id}
-          className={`relative hover:text-zinc-800 transition duration-300 ${
-            position === item.id ? "text-zinc-800" : "text-zinc-600"
-          }`}
-        >
-          <Link href={{ pathname: "/", hash: item.url }}>{item.label}</Link>
-
-          <motion.div
-            className="absolute bottom-0 h-[2px] bg-primary-500"
-            animate={{ width: position === item.id ? "100%" : 0 }}
-            transition={{ duration: 0.5 }}
-          />
-        </li>
-      ))}
-    </motion.ul>
+    <nav className="sticky top-2 z-40 mt-4 hidden justify-center lg:flex">
+      <motion.ul
+        className="flex gap-10 rounded-full px-8 py-4 shadow-2xl backdrop-blur-xl transition-all duration-300"
+        style={{ opacity, background, y }}
+      >
+        {NavList.map((item) => (
+          <li
+            key={item.id}
+            className={`relative transition duration-300 hover:text-zinc-800 ${
+              position === item.id ? "text-zinc-800" : "text-zinc-600"
+            }`}
+          >
+            <Link href={{ pathname: "/", hash: item.url }}>{item.label}</Link>
+            <motion.div
+              className="absolute bottom-0 h-[2px] bg-primary-500"
+              animate={{ width: position === item.id ? "100%" : 0 }}
+              transition={{ duration: 0.5 }}
+            />
+          </li>
+        ))}
+      </motion.ul>
+    </nav>
   );
 };
-
-export const NavList = [
-  {
-    id: 0,
-    label: "About",
-    url: "#about",
-  },
-  {
-    id: 1,
-    label: "Work",
-    url: "#work",
-  },
-  {
-    id: 2,
-    label: "Portfolio",
-    url: "#portfolio",
-  },
-  {
-    id: 3,
-    label: "Blog",
-    url: "#blog",
-  },
-  {
-    id: 4,
-    label: "Contact",
-    url: "#contact",
-  },
-];
 
 export default StickyNav;

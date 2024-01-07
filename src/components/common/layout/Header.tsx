@@ -70,7 +70,7 @@ const Header = () => {
   }, [isOpen]);
 
   return (
-    <>
+    <header>
       <div className="flex w-full items-center justify-between py-4">
         <Link href="/">
           <Image
@@ -108,7 +108,7 @@ const Header = () => {
           {isOpen && <MenuNav closeMenu={closeMenu} />}
         </motion.div>
       </motion.div>
-    </>
+    </header>
   );
 };
 

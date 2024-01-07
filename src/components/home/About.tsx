@@ -26,7 +26,7 @@ const About = () => {
           Framer Motion. When not coding, I enjoy scouring the Internet for
           design ideas, tinkering with Figma, or writing.
         </p>
-        <div className="mt-6 flex gap-16">
+        <div className="mt-6 flex flex-col sm:flex-row gap-y-6 gap-x-16">
           <div className="flex items-center gap-2">
             <i>
               <IconEmail size={21} />
@@ -81,7 +81,7 @@ const FrontElement = () => {
 const BackElement = () => {
   return (
     <h2
-      className={`${montserrat.variable} absolute -left-32 font-sans text-[320px] font-bold uppercase leading-[250px] text-primary-500`}
+      className={`${montserrat.variable} absolute -left-32 font-sans text-96 sm:text-[320px] font-bold uppercase leading-[250px] text-primary-500`}
     >
       N
     </h2>

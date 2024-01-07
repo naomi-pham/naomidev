@@ -1,3 +1,4 @@
+import HomeLayout from "~/components/common/layout/HomeLayout";
 import StickyNav from "~/components/common/layout/StickyNav";
 import About from "~/components/home/About";
 import Banner from "~/components/home/Banner";
@@ -8,7 +9,7 @@ import Services from "~/components/home/Services";
 
 export default function HomePage() {
   return (
-    <>
+    <HomeLayout>
       <Banner />
       <div>
         <StickyNav />
@@ -18,6 +19,6 @@ export default function HomePage() {
         <Blog />
         <Contact />
       </div>
-    </>
+    </HomeLayout>
   );
 }

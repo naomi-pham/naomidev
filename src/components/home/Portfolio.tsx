@@ -1,5 +1,9 @@
 import Image from "next/image";
-import { PortfolioAccordionData } from "~/constants/data";
+import {
+  DevelopmentPortfolioData,
+  PortfolioAccordionData,
+  WritingPortfolioData,
+} from "~/constants/data";
 import AccordionComponent from "../common/accordion/AccordionComponent";
 import SectionLayout from "../common/layout/SectionLayout";
 
@@ -29,7 +33,9 @@ const BackElement = () => {
         className="max-w-[150px] bg-primary-500/50 lg:max-w-[200px]"
       />
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center capitalize text-white">
-        <span className="text-heading-3">3</span>{" "}
+        <span className="text-heading-3">
+          {DevelopmentPortfolioData.length + WritingPortfolioData.length}
+        </span>{" "}
         <span className="block">projects</span>
       </div>
     </div>

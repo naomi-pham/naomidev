@@ -4,9 +4,9 @@ import Header from "../common/layout/Header";
 
 const Banner = () => {
   return (
-    <section className="container mx-auto flex h-screen min-h-screen max-w-[1440px] flex-col px-4 text-neutral-50">
+    <div className="container mx-auto flex h-screen min-h-screen max-w-[1440px] flex-col px-4 text-neutral-50">
       <Header />
-      <div className="flex flex-1 flex-col items-center justify-center gap-8 pt-40 text-center">
+      <section className="flex flex-1 flex-col items-center justify-center gap-8 pt-40 text-center">
         <h1 className="gradient-text-white text-heading-2 uppercase sm:text-heading-1 lg:tracking-widest">
           Naomi Pham
         </h1>
@@ -20,8 +20,8 @@ const Banner = () => {
             <IconBannerArrow />
           </Link>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

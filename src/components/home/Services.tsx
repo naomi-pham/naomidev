@@ -41,9 +41,7 @@ const Services = () => {
                 </h4>
                 <div>{selectedTab.component}</div>
               </div>
-            ) : (
-              "😋"
-            )}
+            ) : null}
           </motion.div>
         </AnimatePresence>
       </div>

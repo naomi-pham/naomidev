@@ -7,9 +7,7 @@ const Blog = () => {
     <SectionLayout title="Blog" id="blog">
       <div className="mt-20 flex flex-col gap-y-10">
         <BlogCard />
-        <div className="sm:self-end">
-          <BlogCard />
-        </div>
+        <BlogCard />
       </div>
 
       <div className="my-2 mt-20 flex justify-center">

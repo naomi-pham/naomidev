@@ -31,7 +31,7 @@ const BlogCard = () => {
   }, [ref.current]);
 
   return (
-    <div style={{ minHeight }}>
+    <div style={{ minHeight }} className="even:self-end">
       <motion.div ref={ref} style={{ y }}>
         <Image
           src="/blog-1.png"

@@ -24,6 +24,11 @@ export interface IPortfolioCard {
   id: number;
   project: string;
   image: string;
+  demoLink?: string;
+  githubLink?: string;
+  description?: string;
+  technologies?: Array<string>;
+  postLink?: string;
 }
 
 export interface IServiceTabItem {
