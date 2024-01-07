@@ -11,6 +11,8 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
     ["#6E9EB9", "#EBECE6"],
   );
 
+  // const color = useTransform(scrollYProgress, [0, 0.2], ["#fff", "#6E9EB9"]);
+
   return (
     <motion.main style={{ background }} className="min-h-full">
       {children}

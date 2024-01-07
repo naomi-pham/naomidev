@@ -67,7 +67,7 @@ const StickyNav = () => {
   );
 };
 
-const NavList = [
+export const NavList = [
   {
     id: 0,
     label: "About",

@@ -1,18 +1,13 @@
 "use client";
 
-import React, { type ReactNode, useState } from "react";
+import { useState } from "react";
+import { type IAccordionItem } from "~/constants/interfaces";
 import AccordionItem from "./AccordionItem";
-
-export interface AccordionItemProps {
-  id: number;
-  title: string;
-  content: ReactNode;
-}
 
 const AccordionComponent = ({
   accordionData,
 }: {
-  accordionData: AccordionItemProps[];
+  accordionData: IAccordionItem[];
 }) => {
   const [openKey, setOpenKey] = useState<null | number>(0);
 
@@ -21,8 +16,8 @@ const AccordionComponent = ({
   };
 
   return (
-    <div className="border-y border-y-primary-500 w-full lg:max-w-lg">
-      {accordionData.map((item: AccordionItemProps) => (
+    <div className="w-full border-y border-y-primary-500 lg:max-w-lg">
+      {accordionData.map((item: IAccordionItem) => (
         <AccordionItem
           key={item.id}
           item={item}

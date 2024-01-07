@@ -11,7 +11,7 @@ const Banner = () => {
           Naomi Pham
         </h1>
         <p className="text-title-2 font-normal sm:text-heading-3">
-          A Writer & Front-End Dev
+          A Front-End Developer
           <span className="mt-2 block italic">Based in Vietnam</span>
         </p>
 

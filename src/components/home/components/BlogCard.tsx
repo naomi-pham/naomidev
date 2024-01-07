@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const BlogItem = () => {
+const BlogCard = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   const [offset, setOffset] = useState(0);
@@ -41,7 +41,7 @@ const BlogItem = () => {
           className="object-fit max-w-full sm:max-w-[466px]"
         />
 
-        <div className="mt-2 max-w-full sm:max-w-[466px] text-primary-500">
+        <div className="mt-2 max-w-full text-primary-500 sm:max-w-[466px]">
           <h4 className="text-title-2">The 60-30-10 Rule in Web Design</h4>
           <div className="flex items-center justify-between">
             <p>(coming soon)</p>
@@ -57,4 +57,4 @@ const BlogItem = () => {
   );
 };
 
-export default BlogItem;
+export default BlogCard;

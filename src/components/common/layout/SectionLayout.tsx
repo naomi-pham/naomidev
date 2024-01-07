@@ -15,23 +15,31 @@ const SectionLayout = ({
   children,
   leftComponent,
   page,
+  frontElement,
+  backElement,
+  offset = 0,
 }: {
   title: string;
   id: string;
   children?: ReactNode;
-  leftComponent?: ReactNode;
   page?: number;
+  leftComponent?: ReactNode;
+  frontElement?: ReactNode;
+  backElement?: ReactNode;
+  offset?: number;
 }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
   });
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, 300]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [-40, 480]);
+  const y1 = useTransform(scrollYProgress, [0, 1], [-offset, 200]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [-100, 300]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const y4 = useTransform(scrollYProgress, [0, 1], [-40, 480]);
 
   return (
     <section
-      className="flex h-full mt-20 sm:mt-32 lg:mt-0 lg:min-h-screen flex-col justify-center overflow-y-hidden"
+      className="mt-20 flex h-full flex-col justify-center overflow-y-hidden sm:mt-32 lg:mt-0 lg:min-h-screen"
       id={id}
     >
       <div className="container mx-auto px-4 xl:px-8 2xl:max-w-7xl">
@@ -45,9 +53,21 @@ const SectionLayout = ({
           </span>
         </h2>
 
-        {leftComponent ? (
-          <div className="mt-20 flex flex-col items-center justify-between gap-y-20 lg:flex-row">
-            <motion.div style={{ y: y1 }} className="z-10">{leftComponent}</motion.div>
+        {frontElement ? (
+          <div className="mt-40 flex flex-col items-center justify-between gap-y-20 lg:flex-row">
+            <div className="flex">
+              <motion.div style={{ y: y1 }} className="z-10">
+                {frontElement}
+              </motion.div>
+              <motion.div style={{ y: y2 }}>{backElement}</motion.div>
+            </div>
+            {children}
+          </div>
+        ) : leftComponent ? (
+          <div className="mt-40 flex flex-col items-center justify-between gap-y-20 lg:flex-row">
+            <motion.div style={{ y: y1 }} className="z-10">
+              {leftComponent}
+            </motion.div>
             {children}
           </div>
         ) : (
@@ -57,7 +77,7 @@ const SectionLayout = ({
         {page ? (
           <motion.div className="relative mt-40 hidden justify-end text-heading-3 text-primary-500 lg:flex">
             <motion.p
-              style={{ y: y1 }}
+              style={{ y: y3 }}
               className={`${montserrat.variable} z-10 font-sans font-bold`}
             >
               {`0${page}`}
@@ -68,7 +88,7 @@ const SectionLayout = ({
               height={76}
               width={22}
               className="absolute bottom-3 right-4 max-w-[20px]"
-              style={{ y: y2 }}
+              style={{ y: y4 }}
             />
           </motion.div>
         ) : null}

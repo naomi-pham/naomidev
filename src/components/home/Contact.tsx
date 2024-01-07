@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { ContactData } from "~/constants/data";
+import CustomLink from "../common/buttonOrLink/CustomLink";
 import SectionLayout from "../common/layout/SectionLayout";
-import { IconEmail, IconThread } from "../common/Icons";
-import Link from "next/link";
-import NewsletterForm from "./components/NewsletterForm";
-import { useInView, motion } from "framer-motion";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -37,7 +36,7 @@ const Contact = () => {
         variants={parent}
         className="mt-10 grid grid-cols-1 justify-between gap-y-16 sm:grid-cols-2 lg:mt-20"
       >
-        {ContactList.map((item) => (
+        {ContactData.map((item) => (
           <motion.li
             variants={child}
             key={item.id}
@@ -52,12 +51,7 @@ const Contact = () => {
                 <div className="flex items-center gap-2">
                   <p>{item.label}</p>
                   <div className="aspect-square w-1 rounded-full bg-primary-500"></div>
-                  <Link
-                    href={item.url}
-                    className="text-primary-500 underline underline-offset-4"
-                  >
-                    {item.linkText}
-                  </Link>
+                  <CustomLink url={item.url}>{item.linkText}</CustomLink>
                 </div>
               </div>
             )}
@@ -67,30 +61,5 @@ const Contact = () => {
     </SectionLayout>
   );
 };
-
-const ContactList = [
-  {
-    id: 0,
-    title: "Let's work together",
-    icon: <IconEmail />,
-    label: "Email",
-    url: "/",
-    linkText: "Send me a message",
-  },
-  {
-    id: 1,
-    title: "Connect on socials",
-    icon: <IconThread />,
-    label: "Threads",
-    url: "/",
-    linkText: "Share your thoughts",
-  },
-  {
-    id: 2,
-    title: "Subscribe to newsletter",
-    content: <NewsletterForm />,
-    label: "Newsletter",
-  },
-];
 
 export default Contact;

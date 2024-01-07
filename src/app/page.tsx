@@ -1,4 +1,4 @@
-import StickyNav from "~/components/common/layout/StickNav";
+import StickyNav from "~/components/common/layout/StickyNav";
 import About from "~/components/home/About";
 import Banner from "~/components/home/Banner";
 import Blog from "~/components/home/Blog";

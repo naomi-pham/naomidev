@@ -5,6 +5,7 @@ import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import MenuNav from "./MenuNav";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -26,7 +27,6 @@ const sidebar = {
     backgroundColor: "transparent",
     color: "#FFFFFF",
     transition: {
-      delay: 0.2,
       type: "spring",
       stiffness: 400,
       damping: 40,
@@ -57,6 +57,10 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -74,7 +78,7 @@ const Header = () => {
             alt="image"
             width={80}
             height={80}
-            className="max-w-[64px] object-cover hover:scale-110 transition duration-300"
+            className="max-w-[64px] object-cover transition duration-300 hover:scale-110"
           />
         </Link>
         <motion.button
@@ -83,9 +87,11 @@ const Header = () => {
           variants={button}
         >
           <p
-            className={`font-sans ${montserrat.variable} text-title-3 font-bold`}
+            className={`${
+              isOpen ? "text-zinc-800" : "text-white"
+            } z-10 font-sans ${montserrat.variable} text-xl font-bold`}
           >
-            Menu
+            {isOpen ? "Close this menu" : "Menu"}
           </p>
         </motion.button>
       </div>
@@ -98,7 +104,9 @@ const Header = () => {
         <motion.div
           className="fixed inset-0 z-0 bg-neutral-50"
           variants={sidebar}
-        />
+        >
+          {isOpen && <MenuNav closeMenu={closeMenu} />}
+        </motion.div>
       </motion.div>
     </>
   );

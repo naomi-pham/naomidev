@@ -86,6 +86,14 @@ export default {
           },
         ],
         "body-2": [
+          "1rem",
+          {
+            lineHeight: "1.5rem",
+            letterSpacing: "0.01em",
+            fontWeight: "400",
+          },
+        ],
+        "body-3": [
           "0.875rem",
           {
             lineHeight: "1.25rem",
