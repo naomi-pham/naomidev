@@ -11,7 +11,7 @@ const AccordionComponent = ({
 }) => {
   const [openKey, setOpenKey] = useState<null | number>(0);
 
-  const handleToggle = (key: number) => () => {
+  const handleToggle = (key: number) => {
     setOpenKey(openKey !== key ? key : null);
   };
 

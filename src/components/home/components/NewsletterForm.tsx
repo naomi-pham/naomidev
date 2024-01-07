@@ -1,14 +1,8 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import CustomButton from "~/components/common/buttonOrLink/CustomButton";
 import { type INewsletterFom } from "~/constants/interfaces";
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 const NewsletterForm = () => {
   const [formData, setFormData] = useState<INewsletterFom>({

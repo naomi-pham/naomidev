@@ -3,15 +3,15 @@
 import { motion } from "framer-motion";
 import React from "react";
 import useMeasure from "react-use-measure";
-import { type AccordionItemProps } from "./AccordionComponent";
 import { IconClose } from "../Icons";
+import { type IAccordionItem } from "~/constants/interfaces";
 
 const AccordionItem = ({
   item,
   handleToggle,
   open,
 }: {
-  item: AccordionItemProps;
+  item: IAccordionItem;
   open: boolean;
   handleToggle: (key: number) => void;
 }) => {
@@ -24,7 +24,7 @@ const AccordionItem = ({
       <button
         type="button"
         className="flex w-full items-center justify-between gap-4 p-4 text-primary-500"
-        onClick={handleToggle(item.id)}
+        onClick={() => handleToggle(item.id)}
       >
         <h4 className="text-heading-4">{item?.title}</h4>
 
