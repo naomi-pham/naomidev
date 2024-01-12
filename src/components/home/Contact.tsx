@@ -6,26 +6,26 @@ import { ContactData } from "~/constants/data";
 import CustomLink from "../common/buttonOrLink/CustomLink";
 import SectionLayout from "../common/layout/SectionLayout";
 
+const parent = {
+  hidden: { opacity: 0, y: 10 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delayChildren: 0.1,
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const child = {
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0 },
+};
+
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-
-  const parent = {
-    hidden: { opacity: 0, y: 10 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delayChildren: 0.1,
-        staggerChildren: 0.4,
-      },
-    },
-  };
-
-  const child = {
-    hidden: { opacity: 0, y: 10 },
-    show: { opacity: 1, y: 0 },
-  };
 
   return (
     <SectionLayout title="Contact" id="contact">

@@ -1,9 +1,9 @@
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
-import SectionLayout from "../common/layout/SectionLayout";
+import { AboutLinks } from "~/constants/data";
 import CustomLink from "../common/buttonOrLink/CustomLink";
+import SectionLayout from "../common/layout/SectionLayout";
 import ContentWrapper from "./components/ContentWrapper";
-import { IconEmail, IconResume } from "../common/Icons";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -26,36 +26,20 @@ const About = () => {
           Framer Motion. When not coding, I enjoy scouring the Internet for
           design ideas, tinkering with Figma, or writing.
         </p>
-        <div className="mt-6 flex flex-col sm:flex-row gap-y-6 gap-x-16">
-          <div className="flex items-center gap-2">
-            <i>
-              <IconEmail size={21} />
-            </i>
-            <div className="flex items-center gap-2">
-              <p>Email</p>
-              <div className="aspect-square w-1 rounded-full bg-primary-500"></div>
-              <CustomLink url="mailto:phambaonguyendn@gmail.com" isExternal>
-                Contact me
-              </CustomLink>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <i>
-              <IconResume size={21} />
-            </i>
-            <div className="flex items-center gap-2">
-              <p>CV</p>
-              <div className="aspect-square w-1 rounded-full bg-primary-500"></div>
-              <CustomLink
-                url="https://www.canva.com/design/DAFOlR2tzW4/IZkGXO8j7RI-l2pd4-cyZw/view"
-                isExternal
-              >
-                View my resume
-              </CustomLink>
-            </div>
-          </div>
-        </div>
+        <ul className="mt-6 flex flex-col flex-wrap gap-x-16 gap-y-6 sm:flex-row">
+          {AboutLinks.map((item) => (
+            <li key={item.id} className="flex items-center gap-2">
+              <i>{item.icon}</i>
+              <div className="flex items-center gap-2">
+                <p>{item.label}</p>
+                <div className="aspect-square w-1 rounded-full bg-primary-500"></div>
+                <CustomLink url={item.url} isExternal={item.isExternal}>
+                  {item.linkText}
+                </CustomLink>
+              </div>
+            </li>
+          ))}
+        </ul>
       </ContentWrapper>
     </SectionLayout>
   );
@@ -81,7 +65,7 @@ const FrontElement = () => {
 const BackElement = () => {
   return (
     <h2
-      className={`${montserrat.variable} absolute -left-32 font-sans text-96 sm:text-[320px] font-bold uppercase leading-[250px] text-primary-500`}
+      className={`${montserrat.variable} text-96 absolute -left-32 font-sans font-bold uppercase leading-[250px] text-primary-500 sm:text-[320px]`}
     >
       N
     </h2>

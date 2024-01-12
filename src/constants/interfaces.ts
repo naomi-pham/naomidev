@@ -29,6 +29,8 @@ export interface IPortfolioCard {
   description?: string;
   technologies?: Array<string>;
   postLink?: string;
+  title?: string;
+  publication?: string;
 }
 
 export interface IServiceTabItem {
